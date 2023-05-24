@@ -3,25 +3,56 @@ import WebKit
 
 struct ContentView: View {
     @State private var hackerNewsPosts: [HackerNewsPost] = []
-
+    @State private var showWebView = false
+    @State private var webViewURL: URL?
+    
     var body: some View {
-        NavigationView {
-            List(hackerNewsPosts) { post in
-                NavigationLink(destination: WebView(url: URL(string: post.url)!)) {
-                    VStack(alignment: .leading) {
-                        Text(post.title)
-                            .font(.headline)
-                        Text(post.url)
-                            .font(.subheadline)
+        VStack {
+            Text("Hacker News")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .padding(.top, 20)
+            
+            ScrollView {
+                VStack(spacing: 10) {
+                    ForEach(hackerNewsPosts) { post in
+                        Button(action: {
+                            if let url = post.url {
+                                webViewURL = URL(string: url)
+                                showWebView = true
+                            }
+                        }) {
+                            VStack(alignment: .leading) {
+                                Text(post.title)
+                                    .font(.headline)
+                                    .foregroundColor(.black)
+                                    .lineLimit(2)
+                                if let url = post.url {
+                                    Text(url)
+                                        .font(.subheadline)
+                                        .foregroundColor(.black)
+                                        .lineLimit(1)
+                                }
+                            }
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(Color.white)
+                            .cornerRadius(10)
+                            .shadow(color: Color.gray.opacity(0.4), radius: 4, x: 0, y: 2)
+                        }
+                        .buttonStyle(PlainButtonStyle())
                     }
                 }
+                .padding()
             }
-            .onAppear {
-                fetchHackerNewsPosts()
-            }
-            .padding()
-            .navigationTitle("Hacker News")
-            .background(Color.orange)
+            .padding(.top, 10)
+        }
+        .background(Color.orange.ignoresSafeArea())
+        .onAppear {
+            fetchHackerNewsPosts()
+        }
+        .sheet(isPresented: $showWebView) {
+            WebView(url: webViewURL)
         }
     }
 
@@ -73,31 +104,24 @@ struct ContentView: View {
             }
         }.resume()
     }
-
-}
-
-struct HackerNewsPost: Identifiable, Decodable {
-    var id: Int
-    var title: String
-    var url: String
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
 }
 
 struct WebView: UIViewRepresentable {
-    let url: URL
-
-    func makeUIView(context: Context) -> WKWebView  {
-        let webView = WKWebView()
-        webView.load(URLRequest(url: url))
-        return webView
+    let url: URL?
+    func makeUIView(context: Context) -> WKWebView {
+        return WKWebView()
     }
 
     func updateUIView(_ uiView: WKWebView, context: Context) {
-        // Nothing to do here
+        if let url = url {
+            let request = URLRequest(url: url)
+            uiView.load(request)
+        }
     }
+}
+
+struct HackerNewsPost: Identifiable, Decodable {
+var id: Int
+var title: String
+var url: String?
 }
