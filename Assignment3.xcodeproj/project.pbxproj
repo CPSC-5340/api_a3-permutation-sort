@@ -11,6 +11,9 @@
 		ACF5E04229BE957F00DD981A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF5E04129BE957F00DD981A /* ContentView.swift */; };
 		ACF5E04429BE958000DD981A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACF5E04329BE958000DD981A /* Assets.xcassets */; };
 		ACF5E04729BE958000DD981A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACF5E04629BE958000DD981A /* Preview Assets.xcassets */; };
+		D49E6CCB2A20290B0043A5B1 /* HackerNewsPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49E6CCA2A20290B0043A5B1 /* HackerNewsPost.swift */; };
+		D49E6CCD2A2029240043A5B1 /* HackerNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49E6CCC2A2029240043A5B1 /* HackerNewsViewModel.swift */; };
+		D49E6CCF2A20294B0043A5B1 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49E6CCE2A20294B0043A5B1 /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		ACF5E04129BE957F00DD981A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ACF5E04329BE958000DD981A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACF5E04629BE958000DD981A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D49E6CCA2A20290B0043A5B1 /* HackerNewsPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackerNewsPost.swift; sourceTree = "<group>"; };
+		D49E6CCC2A2029240043A5B1 /* HackerNewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackerNewsViewModel.swift; sourceTree = "<group>"; };
+		D49E6CCE2A20294B0043A5B1 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +59,9 @@
 			children = (
 				ACF5E03F29BE957F00DD981A /* Assignment3App.swift */,
 				ACF5E04129BE957F00DD981A /* ContentView.swift */,
+				D49E6CCA2A20290B0043A5B1 /* HackerNewsPost.swift */,
+				D49E6CCC2A2029240043A5B1 /* HackerNewsViewModel.swift */,
+				D49E6CCE2A20294B0043A5B1 /* WebView.swift */,
 				ACF5E04329BE958000DD981A /* Assets.xcassets */,
 				ACF5E04529BE958000DD981A /* Preview Content */,
 			);
@@ -137,8 +146,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D49E6CCB2A20290B0043A5B1 /* HackerNewsPost.swift in Sources */,
+				D49E6CCF2A20294B0043A5B1 /* WebView.swift in Sources */,
 				ACF5E04229BE957F00DD981A /* ContentView.swift in Sources */,
 				ACF5E04029BE957F00DD981A /* Assignment3App.swift in Sources */,
+				D49E6CCD2A2029240043A5B1 /* HackerNewsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +279,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Assignment3/Preview Content\"";
+				DEVELOPMENT_TEAM = 673A5RLJN3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -279,7 +292,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.auburn.onlinecsse.Assignment3;
+				PRODUCT_BUNDLE_IDENTIFIER = "hacker-news-simple-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -295,6 +308,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Assignment3/Preview Content\"";
+				DEVELOPMENT_TEAM = 673A5RLJN3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -307,7 +321,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.auburn.onlinecsse.Assignment3;
+				PRODUCT_BUNDLE_IDENTIFIER = "hacker-news-simple-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
